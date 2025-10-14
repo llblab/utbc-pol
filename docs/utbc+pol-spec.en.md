@@ -6,7 +6,7 @@
 
 ## Abstract
 
-`UTBC+POL` creates a self-reinforcing token economy by coupling token minting with permanent liquidity generation. A smart router compares prices between a unidirectional bonding curve and secondary market pool, ensuring optimal execution while systematically building protocol-owned liquidity that cannot be withdrawn. Router fees undergo burning for deflationary pressure.
+`UTBC+POL` creates a self-reinforcing token economy by coupling token minting with permanent liquidity generation. An axial router compares prices between a unidirectional bonding curve and secondary market pool, ensuring optimal execution while systematically building protocol-owned liquidity that cannot be withdrawn. Router fees undergo burning for deflationary pressure.
 
 ---
 
@@ -23,12 +23,11 @@ Traditional token launches require external liquidity providers who can withdraw
 - **Infrastructure Premium**: Users receive more tokens while protocol captures arbitrage
 - **Self-Sustaining**: No external LPs or emissions required
 - **Deflationary**: Router fees burn systematically
-- **Precision-First**: Zero token loss through remainder handling
 
 ### 1.3 Money Lego Composition
 
 ```
-Bonding Curve + AMM Pool + Protocol Owned Liquidity = `UTBC+POL`
+Unidirectional Bonding Curve + Protocol Owned Liquidity (XYK) = `UTBC+POL`
 ```
 
 Creates emergent properties:
@@ -45,14 +44,14 @@ Creates emergent properties:
 
 ```rust
 // Substrate-inspired types for precision
-type Balance = u128;      // Token amounts
-type Price = u128;        // Price with PRECISION scaling
-type Permill = u32;       // Parts per million (0-1_000_000)
+type Balance = u128;  // Token amounts
+type Price = u128;    // Price with PRECISION scaling
+type Permill = u32;   // Parts per million (0-1_000_000)
 
 const Precision: u128 = 1_000_000_000_000;  // 10^12
 ```
 
-### 2.2 Smart Router
+### 2.2 Axial Router
 
 ```rust
 struct Router;
@@ -362,10 +361,10 @@ Example: XYK offers 100 tokens for 1 ETH
 ### 3.3 Value Flows
 
 ```
+         ↗ Fee burning → Scarcity → Value Accrual
 User Buy → Mint → POL Growth → Deeper Liquidity → Better Prices
-          ↘ Treasury → Development → Protocol Growth
-           ↘ Team → Alignment → Sustainability
-            ↘ Burning → Scarcity → Value Accrual
+                ↘ Treasury → Development → Protocol Growth
+                ↘ Team → Alignment → Development → Sustainability
 ```
 
 ---
@@ -479,5 +478,5 @@ enum Error {
 
 - **Version**: 1.2.0
 - **Date**: September 2025
-- **Author**: Viacheslav Shebuniaev
+- **Author**: LLB Lab
 - **License**: MIT

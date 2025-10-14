@@ -1,3 +1,5 @@
+`work in progress`
+
 # `UTBC+POL`: Unidirectional Token Bonding Curve + Protocol Owned Liquidity
 
 A token launch mechanism that combines unidirectional bonding curves with automatic liquidity generation.
@@ -6,7 +8,7 @@ A token launch mechanism that combines unidirectional bonding curves with automa
 
 `UTBC+POL` solves the liquidity provider risk in token launches by making the protocol itself the permanent liquidity provider.
 
-The system uses a **smart router** that compares prices between two sources:
+The system uses a **axial router** that compares prices between two sources:
 
 - **Bonding Curve**: Mathematical pricing formula that mints new tokens
 - **Liquidity Pool**: Existing AMM market with actual trading depth
@@ -15,7 +17,7 @@ Users always get the better price. When the bonding curve offers a better deal, 
 
 ## Key Mechanics
 
-- **Smart Routing**: Automatic price comparison ensures best execution for buyers
+- **Axial Routing**: Automatic price comparison ensures best execution for buyers
 - **Market-Driven Supply**: New tokens only mint when genuine demand exceeds secondary market prices
 - **Unidirectional**: Tokens can only be minted through the bonding curve, never redeemed back
 - **Protocol Owned Liquidity**: LP tokens are held permanently by the protocol, creating an ever-growing liquidity floor
@@ -25,5 +27,5 @@ The result is a self-reinforcing system where growth in demand directly translat
 
 ## Resources
 
-- **[Specification](./UTBC+POL%20spec.%20v1.1.0.md)** - Technical implementation details and economic analysis
-- **[Simulator](./simulator.js)** - Interactive tokenomics modeling tool
+- **[Specification](./docs/utbc+pol-spec.en.md)** - Technical implementation details and economic analysis
+- **[Simulator](./simulator/model.js)** - Interactive tokenomics modeling tool
