@@ -45,9 +45,9 @@ Creates emergent properties:
 
 ```rust
 // Substrate-inspired types for precision
-type Balance = u128;      // Token amounts
-type Price = u128;        // Price with PRECISION scaling
-type Permill = u32;       // Parts per million (0-1_000_000)
+type Balance = u128;  // Token amounts
+type Price = u128;    // Price with PRECISION scaling
+type Permill = u32;   // Parts per million (0-1_000_000)
 
 const Precision: u128 = 1_000_000_000_000;  // 10^12
 ```
@@ -363,9 +363,9 @@ Example: XYK offers 100 tokens for 1 ETH
 
 ```
 User Buy → Mint → POL Growth → Deeper Liquidity → Better Prices
-          ↘ Treasury → Development → Protocol Growth
-           ↘ Team → Alignment → Sustainability
-            ↘ Burning → Scarcity → Value Accrual
+         |       ↘ Treasury → Development → Protocol Growth
+         |        ↘ Team → Alignment → Sustainability
+          ↘ Burning → Scarcity → Value Accrual
 ```
 
 ---
@@ -479,5 +479,5 @@ enum Error {
 
 - **Version**: 1.2.0
 - **Date**: September 2025
-- **Author**: Viacheslav Shebuniaev
+- **Author**: LLB Lab
 - **License**: MIT
